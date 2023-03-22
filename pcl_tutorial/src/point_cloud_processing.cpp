@@ -1,7 +1,6 @@
 /**
  * @file point_cloud_processing.cpp
  * @author Adrian Sochaniwsky (sochania@mcmaster.ca)
- * @brief 
  * @version 0.1
  * @date 2023-03-22
  * 

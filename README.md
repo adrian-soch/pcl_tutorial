@@ -13,9 +13,16 @@ sudo apt install ros-galactic-pcl-conversions
 Clone this repo into a ROS 2 workspace and build: 
 
 ```
+source <ROS_WS>/install.setup.bash
 cd <ROS_WS>/src
 git clone https://github.com/adrian-soch/pcl_tutorial
 colcon build
+```
+
+After building the easiest way to start the node is through the launch file, change the paramters inside `processing_node.launch.py` then:
+
+```
+ros2 launch pcl_tutorial processing_node.launch.py
 ```
 
 ## Resources

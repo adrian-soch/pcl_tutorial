@@ -1,7 +1,7 @@
 /**
  * @file point_cloud_processing_node.cpp
  * @author Adrian Sochaniwsky (sochania@mcmaster.ca)
- * @brief 
+ * @brief Creates and begins an instance of the PointCloudProcessor class
  * @version 0.1
  * @date 2023-03-22
  * 

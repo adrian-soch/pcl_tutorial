@@ -1,7 +1,6 @@
 /**
  * @file point_cloud_processing.hpp
  * @author Adrian Sochaniwsky (sochania@mcmaster.ca)
- * @brief 
  * @version 0.1
  * @date 2023-03-22
  * 
@@ -40,6 +39,11 @@
 namespace pcl_tutorial
 {
 
+/**
+ * @brief Creates an object that will subscribe to a pointCloud2 topic and
+ *        performs various basic tasks.
+ * 
+ */
 class PointCloudProcessor : public rclcpp::Node
 {
 public:
