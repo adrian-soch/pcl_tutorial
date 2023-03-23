@@ -55,8 +55,6 @@ ros2 service call /rosbag2_player/play_next rosbag2_interfaces/PlayNext
 
 1. You can save the current configuration and rviz2 will open to this configuration by default. This can be changed at any time.
 
-![Screenshot from 2023-03-22 20-48-32]()
-
 <img src="https://user-images.githubusercontent.com/6884645/227073525-df459713-0294-4f44-a154-9ad2990aff16.png" height="400" />
 
 ### Debugging
