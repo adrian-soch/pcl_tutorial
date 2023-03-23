@@ -3,6 +3,8 @@ Tutorial for using Point Cloud Library (PCL) with ROS 2.
 
 Code adapted for ROS 2 from [ROS Industrial: Building a Perception Pipeline](https://industrial-training-master.readthedocs.io/en/melodic/_source/session5/Building-a-Perception-Pipeline.html).
 
+![Screenshot from 2023-03-22 21-02-56](https://user-images.githubusercontent.com/6884645/227073304-b5e61753-bbda-4aab-89bc-43532cbe2d79.png)
+
 ## Getting Started
 Install ROS 2, create a workspace then install the following packages:
 ```
