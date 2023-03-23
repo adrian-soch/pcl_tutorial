@@ -16,7 +16,7 @@ def generate_launch_description():
 
     perception_node = Node(
         package='pcl_tutorial',
-        executable='point_cloud_processing_node',
+        executable='pcl_tutorial',
         name='point_cloud_processing_node',
         # prefix='valgrind --leak-check=yes ',      # Uncomment to run valgrind 
         output='screen',

@@ -38,6 +38,19 @@ ros2 service call /rosbag2_player/toggle_paused rosbag2_interfaces/TogglePaused
 ros2 service call /rosbag2_player/play_next rosbag2_interfaces/PlayNext
 ```
 
+### Visualization
+
+
+1. To view the point cloud topics, run `rviz2` in a new terminal.
+
+1. Click `Add` near the bottom right, select the `By topic` tab, and then select the point cloud 2 topic that you want to see.
+
+2. Go to `Global Options -> Fixed Frame` and select the frame the data is in. Otherwise there will be a `Global Status` error that prevents you from seeing the data.
+
+3. To make LiDAR points easier to see go to `PointCloud2 -> Style` and select `Points` from the dropdown menu. Feel free to try changing any other settings
+
+1. You can save the current configuration and rviz2 will open to this configuration by default. This can be changed at any time.
+
 ### Debugging
 
 An easy way to debug ROS 2 C++ programs is through VSCode.

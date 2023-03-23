@@ -5,8 +5,8 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='pcl_tutorial',
-            executable='pcl_tutorial',
-            name='point_cloud_processing_node',
+            executable='minimal_pcl_tutorial',
+            name='minimal_example_node',
             # prefix='valgrind --leak-check=yes ',      # Uncomment to run valgrind 
             output='screen',
             parameters=[
