@@ -94,7 +94,8 @@ public:
                 cloud_topic, 1, std::bind(&MinimalPointCloudProcessor::cloud_callback, this, std::placeholders::_1));
 
         /*
-         * SET UP TF
+         * SET UP TF. Optional for transforming between coordinate frames
+         *          You need to create a static tranform publisher to use this
          */
         tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
         tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
@@ -104,7 +105,7 @@ public:
 private:
 
     /*
-     * Sub and Pub
+     * Subscriber and Publisher declaration
      */
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr  cloud_subscriber_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr     voxel_grid_pub_;
@@ -160,8 +161,8 @@ private:
         pcl::fromROSMsg(transformed_cloud, cloud);
 
         /* ========================================
-            * VOXEL GRID
-            * ========================================*/
+        * VOXEL GRID
+        * ========================================*/
         pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_ptr(new pcl::PointCloud<pcl::PointXYZI>(cloud));
         pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_voxel_filtered(new pcl::PointCloud<pcl::PointXYZI>());
         pcl::VoxelGrid<pcl::PointXYZI> voxel_filter;
@@ -170,8 +171,8 @@ private:
         voxel_filter.filter(*cloud_voxel_filtered);
 
         /* ========================================
-            * CROPBOX
-            * ========================================*/
+        * CROPBOX
+        * ========================================*/
         pcl::PointCloud<pcl::PointXYZI> xyz_filtered_cloud;
         pcl::CropBox<pcl::PointXYZI> crop;
         crop.setInputCloud(cloud_voxel_filtered);
@@ -182,11 +183,10 @@ private:
         crop.filter(xyz_filtered_cloud);
 
         /* ========================================
-            * CONVERT PointCloud2 PCL->ROS, PUBLISH CLOUD
-            * ========================================*/
+        * CONVERT PointCloud2 PCL->ROS, PUBLISH CLOUD
+        * ========================================*/
         this->publishPointCloud(voxel_grid_pub_, *cloud_voxel_filtered);
         this->publishPointCloud(crop_pub_, xyz_filtered_cloud);
-
 
         // Get duration and log to console
         auto stop = std::chrono::high_resolution_clock::now();
