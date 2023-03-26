@@ -60,7 +60,7 @@ ros2 service call /rosbag2_player/play_next rosbag2_interfaces/PlayNext
 ### Debugging
 
 An easy way to debug ROS 2 C++ programs is through VSCode.
-1. Build the package with simlinks, and the build type flag
+1. Build the package with simlinks, and the debug flag
 1. Run the ROS node with gdb prefix (or add to launch file)
 1. Add the following to the `launch.json' in the `.vscode` folder
 
